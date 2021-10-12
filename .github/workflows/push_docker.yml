@@ -1,0 +1,22 @@
+name: Manual Push to Docker Hub
+
+on:
+  workflow_dispatch:
+    inputs:
+      node_version:
+        description: "node version, see from here https://hub.docker.com/_/node?tab=tags"
+        required: true
+
+jobs:
+  push:
+    name: Push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Build & Push Image
+        id: push-image
+        run: |
+          docker login --username isdzulqor --password ${{ secrets.DOCKER_PASSWORD }}
+          env NODE_VERSION=${{ github.event.inputs.node_version }} make push 
