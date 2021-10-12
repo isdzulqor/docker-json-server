@@ -19,4 +19,4 @@ jobs:
         id: push-image
         run: |
           docker login --username isdzulqor --password ${{ secrets.DOCKER_PASSWORD }}
-          env NODE_VERSION=${{ github.event.inputs.node_version }} make push 
+          make NODE_VERSION=${{ github.event.inputs.node_version }} push 
