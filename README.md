@@ -2,7 +2,7 @@
     <h1>
 		Docker Json Server
     </h1>
-    <p>a Dockerize <a href="https://github.com/typicode/json-server">json-server</a> with much of flexibility. Works like json-server as CLI. </p>
+    <p>a Dockerized <a href="https://github.com/typicode/json-server">json-server</a> with much of flexibility. Works like json-server as CLI. </p>
     <p>
     Check the Docker Hub <a href="https://hub.docker.com/r/isdzulqor/json-server"> here</a></p>
 </div>
