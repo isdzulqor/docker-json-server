@@ -9,8 +9,27 @@
 
 ## Example Usage
 
+### Direct Run Easily
 ```
-$ docker run --name json-server -v $PWD/db.json:/db.json --rm -p 3000:80 isdzulqor/json-server:latest json-server db.json
+$ docker run --name json-server \
+  -v $PWD/db.json:/db.json --rm \
+  -p 3000:80 isdzulqor/json-server:latest \
+  json-server db.json
+```
+
+### Use Docker Compose
+```docker
+version: "3.7"
+
+services:
+  mock_server:
+    image: isdzulqor/json-server:latest
+    command: json-server db.json --middlewares handle-refund.js
+    ports: 
+      - 8181:80
+    volumes:
+      - ./deploy/local/mock-server.json:/db.json
+      - ./deploy/local/handle-refund.js:/handle-refund.js
 ```
 
 ## Just Set Docker Command like json-server CLI
