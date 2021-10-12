@@ -6,13 +6,13 @@ on:
       - "Makefile"
       - '**.md'
       - 'docs/**'
-    branches: [master]
+    branches: [main]
   push:
     paths-ignore:
       - "Makefile"
       - '**.md'
       - 'docs/**'
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
